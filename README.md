@@ -4,7 +4,7 @@ A very, very hacky way to document multiple dispatch function implemented using 
 
 ## Desclaimer
 
-Have I mentioned that this is very hacky? Also, it is not heavly tested and only tested against mkdocs-material. It contains a lot of hard coded stuff and is not very flexible. It is also not very well documented.
+Have I mentioned that this is very hacky? It raises a whole lot of warnings, the vast majority of which I don't understand. Also, it is not heavly tested and only checked against mkdocs-material. It contains a lot of hard coded stuff and is not very flexible. It is also not very well documented.
 
 I'm uploading this with the hope that someone will find it useful and will improve it. Contributions welcome :)
 
