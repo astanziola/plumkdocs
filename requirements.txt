@@ -1,0 +1,4 @@
+pygments>=2.12.0
+plum-dispatch
+griffe
+markdown
