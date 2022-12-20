@@ -23,7 +23,7 @@ def read_requirements(path):
 
 setup(
     packages=find_packages(include=["plumkdocs*"]),
-    python_requires=">=3.7",
+    python_requires=">=3.8",
     install_requires=read_requirements("requirements.txt"),
     include_package_data=True,
 )
