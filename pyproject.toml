@@ -23,7 +23,13 @@ classifiers = [
   "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
 ]
-version="0.0.1"
+version="0.0.2"
+dependencies = [
+  "pygments>=2.12.0",
+  "plum-dispatch",
+  "griffe",
+  "markdown",
+]
 
 [project.urls]
 "Homepage" = "https://github.com/astanziola/plumkdocs"
