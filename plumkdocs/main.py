@@ -104,9 +104,6 @@ class Implementation(object):
             table += "</tbody></table></div></div>"
             text += table
 
-        # Add an horizontal line
-        text += "<hr>"
-
         return text
 
     @staticmethod
@@ -200,14 +197,18 @@ def strip_modules(string):
     return string
 
 
+def get_base_docs(plum_func):
+    _, func = plum_func[0]
+    return func._doc
+
 def _extract_implementations(plum_func):
-    name, function = plum_func
+    name, func = plum_func
     implementations = []
 
-    for signature, method in zip(function.methods.keys(), function.methods.values()):
-        method = method[0].__wrapped__
-        params = inspect.signature(method).parameters
-        docs = inspect.getdoc(method)
+    for method in func.methods:
+        implementation = method.implementation
+        params = inspect.signature(implementation).parameters
+        docs = inspect.getdoc(implementation)
 
         # Deal with empty docstrings
         docs = "" if docs is None else docs
@@ -252,13 +253,19 @@ def mod_to_string(module_name, function=None):
 
     implementations = list(map(_extract_implementations, operators))
 
+    base_docs = get_base_docs(operators)
+
     # Concatenate all implementations into a string
-    text = ""
+    text = base_docs + '\n'
+    text += "<h3>Concrete implementations:</h3>"
     for fun in implementations:
         # text += f'## `{fun[0].name}`\n\n'
         for i in fun:
             text += "".join(str(i)) + "\n"
         # text += '\n<hr/>\n'
+    
+    # Add an horizontal line
+    text += "<hr>"
     return text
 
 

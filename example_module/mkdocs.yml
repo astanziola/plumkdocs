@@ -1,0 +1,15 @@
+site_name: Plumkdocs example
+
+theme:
+  name: material
+
+plugins:
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          rendering:
+            show_source: false
+      custom_templates: templates
+  - macros:
+      module_name: docs/macros
