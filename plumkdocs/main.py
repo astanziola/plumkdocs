@@ -254,9 +254,10 @@ def mod_to_string(module_name, function=None):
     implementations = list(map(_extract_implementations, operators))
 
     base_docs = get_base_docs(operators)
+    base_implementation = Implementation(None, None, base_docs)
 
     # Concatenate all implementations into a string
-    text = base_docs + '\n'
+    text = base_implementation.docs + '\n'
     text += "<h3>Concrete implementations:</h3>"
     for fun in implementations:
         # text += f'## `{fun[0].name}`\n\n'
