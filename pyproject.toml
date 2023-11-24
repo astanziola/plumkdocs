@@ -1,21 +1,12 @@
-[build-system]
-requires = [
-    "hatchling",
-    "setuptools>=50",
-    "wheel",
-    "toml",
-]
-build-backend = "hatchling.build"
-
-[project]
+[tool.poetry]
 name = "plumkdocs"
+version = "0.0.5"
+description = "Hacky mkdocs documentation for plum-dispatch"
 authors = [
-  { name="Antonio Stanziola", email="stanziola.antonio@gmail.com" }
+  "Antonio Stanziola <stanziola.antonio@gmail.com>"
 ]
-description = "Hacky mkdocs documentation for plum-dispatch "
+license = "LGPL-3.0-only"
 readme = "README.md"
-requires-python = ">=3.8"
-license = { file = "LICENSE.txt", name = "MIT" }
 classifiers = [
   "Intended Audience :: Education",
   "Intended Audience :: Science/Research",
@@ -23,17 +14,24 @@ classifiers = [
   "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
 ]
-version="0.0.4"
-dependencies = [
-  "pygments>=2.12.0",
-  "plum-dispatch",
-  "griffe",
-  "markdown",
+
+packages = [
+  { include="plumkdocs", from="." }
 ]
 
-[project.urls]
+[tool.poetry.urls]
 "Homepage" = "https://github.com/astanziola/plumkdocs"
 "Bug Tracker" = "https://github.com/astanziola/plumkdocs/issues"
 
-[tool.hatch.build]
-include = ["plumkdocs*"]
+[tool.poetry.dependencies]
+python = "^3.9"
+plum-dispatch = "^2"
+griffe = "^0.38.0"
+markdown = "^3.5.1"
+mkdocs-material = "^9.4"
+mkdocstrings = "^0.24"
+mkdocs-macros-plugin = "^1.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
