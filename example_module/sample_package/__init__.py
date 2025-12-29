@@ -1,3 +1,3 @@
-from .functions import foo, bar
+from .functions import bar, foo
 
 __all__ = ["foo", "bar"]

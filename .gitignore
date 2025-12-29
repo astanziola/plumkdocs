@@ -6,6 +6,7 @@ poetry.lock
 
 # Virtual environments
 venv
+.venv
 
 # Packaging
 *.egg-info
@@ -18,11 +19,15 @@ docs/_static
 docs/source
 docs/readme.rst
 cover
+.coverage
+htmlcov/
+.pytest_cache/
 
 # Other
 .DS_Store
 *.swp
 .envrc
+.ruff_cache/
 
 # Cython build files
 *.html
