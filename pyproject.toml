@@ -106,7 +106,7 @@ indent-style = "space"
 [tool.semantic_release]
 version_toml = ["pyproject.toml:project.version"]
 branch = "main"
-build_command = "python -m build"
+build_command = "pip install build && python -m build"
 major_on_zero = false
 tag_format = "v{version}"
 
