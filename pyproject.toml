@@ -1,6 +1,6 @@
 [project]
 name = "plumkdocs"
-version = "0.0.5"
+version = "1.0.0"
 description = "Hacky mkdocs documentation for plum-dispatch"
 authors = [
     {name = "Antonio Stanziola", email = "stanziola.antonio@gmail.com"}
